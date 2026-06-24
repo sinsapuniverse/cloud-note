@@ -8,13 +8,13 @@ The user-facing experience is simple:
 open file -> edit -> autosave -> synced
 ```
 
-Behind the scenes, the app uses Netlify Functions to read and write files in `sinsapuniverse/cloud-note`. The GitHub token stays on the server side and is never exposed to the browser.
+Behind the scenes, the app uses Netlify Functions to read and write Markdown files in `sinsapuniverse/cloud-note`. The GitHub credential stays on the server side and is never exposed to the browser.
 
 ## Features
 
 - File explorer for Markdown notes
 - Markdown editor and preview
-- Pull latest from GitHub on refresh/open
+- Pull latest from GitHub
 - Autosave with automatic GitHub commits
 - Manual save button
 - Basic conflict protection using GitHub file SHA
@@ -30,16 +30,16 @@ Behind the scenes, the app uses Netlify Functions to read and write files in `si
 5. Add environment variables:
 
 ```bash
-GITHUB_TOKEN=your_fine_grained_token_with_contents_read_write
+CLOUD_NOTE_GH_KEY=your_fine_grained_github_key_with_contents_read_write
 CLOUD_NOTE_OWNER=sinsapuniverse
 CLOUD_NOTE_REPO=cloud-note
 CLOUD_NOTE_BRANCH=main
 CLOUD_NOTE_APP_PASSWORD=optional_password_for_the_web_app
 ```
 
-## GitHub token permissions
+## GitHub access setting
 
-Use a fine-grained GitHub token or GitHub App installation token with access only to this repository.
+Use a fine-grained GitHub key with access only to this repository.
 
 Required permission:
 
@@ -47,7 +47,7 @@ Required permission:
 Repository contents: Read and write
 ```
 
-Recommended: grant the token access to `sinsapuniverse/cloud-note` only.
+Recommended: grant access to `sinsapuniverse/cloud-note` only.
 
 ## Local development
 
