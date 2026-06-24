@@ -1,0 +1,8 @@
+{
+  "name": "Cloud Note",
+  "repository": "sinsapuniverse/cloud-note",
+  "branch": "main",
+  "editableExtensions": [".md", ".markdown"],
+  "autosaveDelayMs": 1500,
+  "version": "0.1.0"
+}
